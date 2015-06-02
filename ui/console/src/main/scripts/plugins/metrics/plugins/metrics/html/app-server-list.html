@@ -63,7 +63,7 @@
           <i class="fa fa-arrow-down" ng-show="res.state === 'down' || res.state === 'unknown'"></i>
           <i class="fa fa-spinner fa-spin" ng-show="res.state === 'starting'"></i>
           <i class="fa fa-repeat" ng-show="res.state === 'restart required'"></i>
-          {{res.state | capitalize}}
+          {{res.state | firstUpper}}
         </td>
         <td><a href="/hawkular-ui/app/app-details/{{res.id | urlEncode}}">{{res.id | limitTo14 : res.id.length-4 : 1}}</a> <a href="/hawkular-ui/app/app-details/{{res.id | urlEncode}}" class="pull-right"><span class="label label-danger label-alert" tooltip-trigger tooltip-placement="top" tooltip="Server alerts" ng-show="res.alerts.length > 0">{{res.alerts.length}}</span></a></td>
         <td>{{res.type.id}}</td>
